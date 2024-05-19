@@ -13,6 +13,7 @@ from django.http import JsonResponse
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
+        print(form.data)
         if form.is_valid():
             form.save()
             return redirect('/login')
